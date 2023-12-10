@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Animation</title>
+    <!-- Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="cake">
+            <div class="candle"></div>
+            <div class="top-layer"></div>
+            <div class="middle-layer"></div>
+            <div class="bottom-layer"></div>
+        </div>
+        <div class="card" onclick="expandCard()">
+            <div class="small-card">
+                <p>Happy Birthday</p>
+            </div>
+            <div class="large-card" onclick="shrinkCard(event)">
+                <div class="outside">
+                    <div class="front">
+                        <p>Happy Birthday</p>
+                    </div>
+                    <div class="back"></div>
+                </div>
+                <div class="inside">
+                    <p>
+                        Wishing you a very happy birthday filled with love and laughter
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function expandCard() {
+            const smallCard = document.querySelector(".small-card");
+            const largeCard = document.querySelector(".large-card");
+            const cake = document.querySelector(".cake");
+            smallCard.classList.add("hidden");
+            cake.classList.add("hidden");
+            largeCard.style.transform = "scale(1)";
+        }
+
+        function shrinkCard(event) {
+            const smallCard = document.querySelector(".small-card");
+            const largeCard = document.querySelector(".large-card");
+            const cake = document.querySelector(".cake");
+            largeCard.style.transform = "scale(0)";
+            setTimeout(() => {
+                smallCard.classList.remove("hidden");
+                cake.classList.remove("hidden");
+            }, 1000);
+            event.stopPropagation();
+        }
+    </script>
+</body>
+
+</html>
