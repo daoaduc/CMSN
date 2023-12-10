@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Caveat Brush', cursive;
+    font-family: 'Pacifico', cursive;
 }
 
 body {
@@ -133,9 +133,14 @@ body {
 .small-card {
     width: 32px;
     height: 40px;
-    background-color: #fff;
+    background-color: #f4f1e0;
     opacity: 0;
     animation: show-card 1s 4s forwards, float 2s 4s infinite;
+}
+
+.small-card img {
+    margin-left: 5px;
+    height: 25px;
 }
 
 .small-card p {
@@ -147,8 +152,8 @@ body {
 }
 
 .large-card {
-    width: 640px;
-    height: 400px;
+    width: 840px;
+    height: 525px;
     position: absolute;
     margin: auto;
     left: 0;
@@ -178,10 +183,10 @@ body {
 }
 
 .inside {
-    background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+    background: linear-gradient(to right, #f4f1e0e3, #f4f1e0 30%);
     line-height: 3;
     padding: 0 20px;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -209,12 +214,17 @@ body {
 }
 
 .front {
-    background-color: #ffffff;
+    background-color: #f4f1e0;
 }
 
 .back {
     transform: rotateY(180deg);
-    background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+    background: linear-gradient(to left, #f4f1e0e3, #f4f1e0 30%);
+}
+
+.outside img {
+    height: 400px;
+    margin: 30px 0px 0px 35px;
 }
 
 .outside p {
@@ -226,9 +236,8 @@ body {
     color: #000046;
 }
 
-.inside h1 {
-    font-size: 120px;
-    line-height: 120px;
+.inside p {
+    font-size: 14px;
 }
 
 .hidden {
