@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cake Animation</title>
+    <title>Chúc mừng sinh nhật Tô Mỳ 🍜</title>
     <!-- Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <audio id="myAudio" autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="container">
         <div class="cake">
             <div class="candle"></div>
@@ -48,6 +53,11 @@
         </div>
     </div>
     <script>
+        window.onload = function() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        };
+
         function expandCard() {
             const smallCard = document.querySelector(".small-card");
             const largeCard = document.querySelector(".large-card");
