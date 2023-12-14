@@ -166,11 +166,11 @@ body {
     transition: 1s;
 }
 
-.large-card:hover {
+.large-card.is-clicked {
     transform: rotate(-5deg);
 }
 
-.large-card:hover .outside {
+.large-card.is-clicked .outside {
     transform: rotateY(-130deg);
 }
 

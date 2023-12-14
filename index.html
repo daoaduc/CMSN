@@ -15,7 +15,6 @@
         <source src="song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
     <div class="container">
         <div class="cake">
             <div class="candle"></div>
@@ -28,8 +27,10 @@
                 <p>Happy Birthday</p>
                 <img src="avocado.png">
             </div>
-            <div class="large-card">
-                <div class="outside" onclick="shrinkCard(event)">
+
+            <div class="large-card" onclick="shrinkCard(event)">
+
+                <div class="outside">
                     <div class="front">
                         <p>Happy Birthday</p>
                         <img src="avocado.png">
@@ -74,15 +75,21 @@
 
         function shrinkCard(event) {
             const smallCard = document.querySelector(".small-card");
-            const largeCard = document.querySelector(".large-card");
+            const largeCard = document.querySelector(".large-card.is-clicked");
             const cake = document.querySelector(".cake");
             largeCard.style.transform = "scale(0)";
             setTimeout(() => {
                 smallCard.classList.remove("hidden");
                 cake.classList.remove("hidden");
+                largeCard.classList.remove("is-clicked"); // Remove the 'is-clicked' class
             }, 1000);
             event.stopPropagation();
         }
+        const largeCard = document.querySelector('.large-card');
+
+        largeCard.addEventListener('click', function() {
+            this.classList.toggle('is-clicked');
+        });
     </script>
 </body>
 
